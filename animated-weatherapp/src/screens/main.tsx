@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Text, Box, Center, VStack, useColorModeValue } from "native-base";
-import ThemeToggle from "../components/theme-toggle";
 import Masthead from "../components/masthead";
 import Navbar from "../components/navbar";
 import AnimatedColorBox from '../components/animate-color-box'
@@ -13,7 +12,7 @@ export default function MainScreen() {
     >
       <Masthead
         title="What's up, Edwin!"
-        image={require("../assets/masthead.png")}
+        image={require("../assets/bg.jpeg")}
       >
         <Navbar />
       </Masthead>
@@ -29,7 +28,6 @@ export default function MainScreen() {
         <Box p={10} bg={useColorModeValue("red.500", "yellow.500")}>
           <Text>This is main.tsx</Text>
         </Box>
-        <ThemeToggle />
       </VStack>
     </AnimatedColorBox>
   );
