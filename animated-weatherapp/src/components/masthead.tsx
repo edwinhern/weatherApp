@@ -21,12 +21,12 @@ const Masthead = ({ title, image, children }: Props) => {
         resizeMode="cover"
         source={image}
         alt="masthead image"
-     />
-     {children}
-     <Box flex={1} />
-     <Heading color="white" p={6} size="xl">
+      />
+      {children}
+      <Box flex={1} />
+      <Heading textAlign="left" color="white" p={6} size="xl">
         {title}
-     </Heading>
+      </Heading>
     </VStack>
   );
 };

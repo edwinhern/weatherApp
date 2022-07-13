@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback } from "react";
 import {
   HStack,
   VStack,
@@ -6,33 +6,33 @@ import {
   Avatar,
   Heading,
   IconButton,
-  useColorModeValue
-} from 'native-base'
-import { DrawerContentComponentProps } from '@react-navigation/drawer'
-import AnimatedColorBox from './animated-color-box'
-import ThemeToggle from './theme-toggle'
-import { Feather } from '@expo/vector-icons'
-import MenuButton from './menu-button'
+  useColorModeValue,
+} from "native-base";
+import { DrawerContentComponentProps } from "@react-navigation/drawer";
+import AnimatedColorBox from "./animated-color-box";
+import ThemeToggle from "./theme-toggle";
+import { Feather } from "@expo/vector-icons";
+import MenuButton from "./menu-button";
 
 const Sidebar = (props: DrawerContentComponentProps) => {
-  const { state, navigation } = props
-  const currentRoute = state.routeNames[state.index]
+  const { state, navigation } = props;
+  const currentRoute = state.routeNames[state.index];
 
   const handlePressBackButton = useCallback(() => {
-    navigation.closeDrawer()
-  }, [navigation])
+    navigation.closeDrawer();
+  }, [navigation]);
   const handlePressMenuMain = useCallback(() => {
-    navigation.navigate('Main')
-  }, [navigation])
+    navigation.navigate("Main");
+  }, [navigation]);
   const handlePressMenuAbout = useCallback(() => {
-    navigation.navigate('About')
-  }, [navigation])
+    navigation.navigate("About");
+  }, [navigation]);
 
   return (
     <AnimatedColorBox
       safeArea
       flex={1}
-      bg={useColorModeValue('yellow.50', 'darkBlue.800')}
+      bg={useColorModeValue("yellow.50", "darkBlue.800")}
       p={7}
     >
       <VStack flex={1} space={2}>
@@ -41,17 +41,17 @@ const Sidebar = (props: DrawerContentComponentProps) => {
             onPress={handlePressBackButton}
             borderRadius={100}
             variant="outline"
-            borderColor={useColorModeValue('blue.300', 'darkBlue.700')}
+            borderColor={useColorModeValue("blue.300", "darkBlue.700")}
             _icon={{
               as: Feather,
-              name: 'chevron-left',
+              name: "chevron-left",
               size: 6,
-              color: useColorModeValue('blue.800', 'darkBlue.700')
+              color: useColorModeValue("blue.800", "darkBlue.700"),
             }}
           />
         </HStack>
         <Avatar
-          source={require('../assets/profile.jpeg')}
+          source={require("../assets/profile.jpeg")}
           size="xl"
           borderRadius={100}
           mb={6}
@@ -62,14 +62,14 @@ const Sidebar = (props: DrawerContentComponentProps) => {
           Edwin Hernandez
         </Heading>
         <MenuButton
-          active={currentRoute === 'Main'}
+          active={currentRoute === "Main"}
           onPress={handlePressMenuMain}
           icon="inbox"
         >
           Tasks
         </MenuButton>
         <MenuButton
-          active={currentRoute === 'About'}
+          active={currentRoute === "About"}
           onPress={handlePressMenuAbout}
           icon="info"
         >
@@ -80,7 +80,7 @@ const Sidebar = (props: DrawerContentComponentProps) => {
         <ThemeToggle />
       </Center>
     </AnimatedColorBox>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
